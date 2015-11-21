@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <script src="jquery-1.11.3.min.js"></script>
+    <script src="texteditor.js"></script>
+    <link rel="stylesheet" src="reset.min.css"></link>
+    <style>
+     ul, li {list-style: none;margin:0;padding:0;display: inline-block;}
+      .display-box, .container {float:left; margin:10px;}
+      .rte { float: left;}
+      .font-bold.bold {font-weight:bold;color:#000;display: inline-block;}
+      iframe, #custom-tag, #textEditor,#final-html {width:450px;height:100px;border:2px solid #CCC;overflow:auto;}
+      .font-bold button:focus, .font-bold button:active, .selected button {color:red;} 
+      #hidden{display:none;}
+    </style>
+  </head>
+  <body>
+    <div class="rte">
+      <h1>Texteditor</h1>
+      <ul>
+        <li>
+          <div class="controls"> 
+          <a id="bold" style="" class="font-bold">
+          <button id="b" type="button">B</button>
+          </a> 
+        </div></li>
+        <li><button type="button" class="controls" id='show-custom'>Custom tag</button></li>
+        <li><button type="button"  class="controls" id='show-html'>HTML</button></li>
+        <li><button type="button" class="controls" id='clear'>Clear</button></li>
+      </ul> 
+      <div id="content-editor">  
+        <div id="textEditor" contenteditable="true"></div> 
+      </div> 
+    </div>
+  <div class="rte">
+    <div class="container"> 
+      <div id="code-display" class="display-box">
+        <h1>Custom format</h1>
+        <div id='custom-tag'></div>
+      </div>
+      
+      <div class="display-box"><h1>HTML</h1><div id="final-html"></div></div> 
+  </div>
+</div>
+ <div id="hidden"></div>
+      </body>
+</html>
