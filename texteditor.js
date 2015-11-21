@@ -87,22 +87,23 @@ function boldIt(){
 //converts the html code to custom tags
 function htmltoBBcode() {
   $("#hidden").html($('#textEditor').html());
+       $("#hidden").html($('#textEditor').html());
         $('#hidden b').each(function () {
             $(this).text(function () {
-                return $(this).text().replace(/\s+/g, '').trim();
-            }).before('').after('');
-            var b=$("#hidden b").html();
-            if(b.replace(/\s|&nbsp;/g, '').length == 0){ 
+                return $(this).text().replace(/\s+/g, ' ').trim();
+            }).before(' ').after(' ');
+             var b=$("#hidden b").html();
+             if(b.replace(/\s|&nbsp;/g, '').length == 0){ 
                     $(this).remove();
                 }
         });
-  var html=$("#hidden").html();
-  html=html.replace(/\<strong\>/,'<b>');
-  html=html.replace(/\<\/strong\>/,'</b>');
-   html=html.replace(/\<br\>/,'');
-  html = html.replace(/&nbsp;/g, '');
-  html = html.replace(/\</gi, '[');
-  html = html.replace(/\>/gi, ']');  
-  $("#custom-tag").text(html);    
+         var html=$("#hidden").html();
+        html=html.replace(/\<strong\>/,'<b>');
+        html=html.replace(/\<\/strong\>/,'</b>');
+        html=html.replace(/\<br\>/,'');
+        html = html.replace(/\</gi, '[');
+        html = html.replace(/\>/gi, ']');
+        $("#hidden").html(html);
+        $("#custom-tag").text($("#hidden").html().replace(/&nbsp;/gi, ''));
+     
 }
-
